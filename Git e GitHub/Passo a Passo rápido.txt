@@ -1,0 +1,10 @@
+git add (nome do arquivo) ou git add *
+
+git status
+
+git init
+
+git remote add (nome) (link do repositorio)
+
+git commit -m "Mensagem"
+

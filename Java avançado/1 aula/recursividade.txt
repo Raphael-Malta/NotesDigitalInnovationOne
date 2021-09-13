@@ -1,0 +1,15 @@
+Na recursividade, uma função chama a si mesma repetidamente, até atingir uma condição de parada.
+No caso de Java, um método chama a si mesmo, passando para si objetos primitivos. 
+Cada chamada gera uma nova entrada na pilha de execução, e alguns dados podem ser disponibilizados em um escopo
+global ou local,  atráves de parâmetros em um escopo global ou local.
+
+Tail Call (Recursividade em cauda):
+Recursão em cauda é uma recursão onde não há nenhuma linha de código após a chamada do próprio método e,
+sendo assim, não há nenhum tipo de processamento a ser feito após a chamada recursiva.
+Obs: A JVM não suporta a recursão em cada, ele lança um estouro de pilha.
+
+Java não tem Tail Call.
+
+Memoization: 
+É uma técnica de otimização que consiste no cache do resultado de uma função, baseado nos parâmetros de entrada.
+Com isso, nas seguintes execuções conseguimos ter uma resposta mais rápida.

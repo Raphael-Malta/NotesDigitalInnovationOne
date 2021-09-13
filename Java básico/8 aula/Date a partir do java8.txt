@@ -1,0 +1,25 @@
+A grande melhoria está no pacote java.time que foi herdado do projeto Jada Time.
+
+Nele destacam-se três classes:
+LocalDate;
+LocalTime;
+LocalDateTime;
+
+Basicamente o que tinha antes eram, Date e Calendar.
+Com uso constante, elas se mostraram confusas e trabalhosas, além de ser mutáveis.
+
+LocalDate é uma classe imutável para representar uma data
+Formato padrão é yyyy-MM-dd
+
+
+LocalTime é uma classe imutável que representa um padrão de hora-minuto-segundo.
+Pode ser representado até o nível de nanosegundos. Ex: 12:22:10:123212345
+Sua utilização é similar ao LocalDate.
+
+
+LocalDateTime funciona como uma espécie de junção entre o LocalTime e o LocalDate.
+Também é uma classe imutável e você consegue trabalhar com dia e hora de uma só vez.
+Você pode manipular a data e a hora com precisão de nanosegundos.
+Exemplo:
+2nd October 2007 at 13:45.30.123456789
+

@@ -1,0 +1,6 @@
+Transações:
+Conceito fundamental de todos os sistemas de bancos de dados.
+COnceito de multiplas etapas/códigos reunidos em apenas 1 transação, onde o resultado precisa ser tudo ou nada.
+
+ROLLBACK desfaz as transações
+SAVEPOINT faz com que retorne para o savepoint se acontecer algum erro

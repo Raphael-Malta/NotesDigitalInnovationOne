@@ -1,0 +1,23 @@
+Encapsulamento:
+Quando falamos de encpsulamento, estamos falando efetivamente em proteger alguma informação de alguma forma
+ou seja, com uma cápsula.
+
+Herança:
+Outro pilar importante da Orientação a Objetos.
+Como o próprio nome já diz, essa é a capacidade de uma classe herdar o comportamento de outra.
+
+
+Herança vs Composição:
+Existe um vasto e antigo debate em relação a utilização de herança. Algumas bibliografias inclusive defendem
+que ela nunca deve ser utilizada.
+E o grande problema tem relação com o nosso tópico anterior: o encapsulamento.
+A subclasse necessita conhecer, em muitos casos, a implementação da superclasse, o que cria um 
+acoplamento e quebra a nossa premissa básica do isolamento que vimos no encapsulamento.
+
+
+Polimorfismo:
+Quando falamos em herança, o verbo 'ser' é mandatório na nossa forma de falar sobre a classe.
+Entendemos portanto, que um carro é um veiculo e uma motocicleta também é um veiculo.
+Quando falamos de polimorfismo estamos querendo entrar em um cenário onde um objeto pode ser referenciado de várias maneiras.
+
+

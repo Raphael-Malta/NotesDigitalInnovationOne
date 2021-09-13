@@ -1,0 +1,39 @@
+git init (cria um repositorio no git, dentro daquele diretorio)
+
+
+
+tracked pode ser dividido em 3 estagios (unmodified = não foi modificado,
+ modified=foi modificado, 
+staged=onde ficar os arquivos que estão se preparando para fazer parte de outro agrupamento)
+
+
+
+Untracked (são arquivos que não temos ciencia deles) (o git n sabe dele)
+
+
+
+Get add:
+
+Unmodified (é o arquivo q não foi modificado)
+Caso ele seja modificado ele passa a ser modified
+Ele  faz isso comparando o sha1 deles
+
+
+Caso rode o get add no arquivo modified ele vai para staged
+
+Se remover o arquivo unmodified ele volta pra untracked
+
+Quando coloca os arquivos no staged ele se prepara pra ir pro commit
+
+Commit retorna todos os arquivos para unmodified, e volta o ciclo pra unmodified
+
+Git tem a versão dele no servidor proprio e na sua máquina
+
+staging area vai sempre mudando
+
+quando vc faz o commit ele faz parte pro repositorio local
+que por sua vez pode ir pro repositorio remoto
+
+os arquivos transitão de working directory para staging area 
+
+Repositorio local é composto por commits

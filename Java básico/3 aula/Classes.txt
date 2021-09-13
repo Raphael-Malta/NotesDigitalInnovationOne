@@ -1,0 +1,14 @@
+Classes:
+Atributos, metodos, retornos, parametros, assinaturas e construtores.
+Por convesão toda classe inicia com a letra maiuscula
+Se for composta tbm deve se ter letra maiuscula
+
+Atributos:
+
+Métodos:
+	Retornos
+	Parametros
+	Assinatura
+
+Construtores:
+

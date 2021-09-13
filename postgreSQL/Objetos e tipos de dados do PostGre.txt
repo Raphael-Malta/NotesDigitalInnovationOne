@@ -1,0 +1,104 @@
+postgresql.conf
+Definição:
+Arquivo onde estão todoas as configd do servidor PostgreSQL
+Alguns parâmetros só podem ser alterados com uma reinicialização do DB
+A view pg_settings, acessada por dentro do db guarda todas as configd atuais.
+
+
+ao acessar a view pg_settings é possivel visualizar todas as configs atuais:
+SELECT name,setting
+FROM pg_settings;
+
+ou
+SHOW [parâmetro]
+
+A localização do postgresql.conf
+Por padrão fica dentro do diretorio PGDATA
+
+COnfigurações de conexão:
+LISTEN_ADDRESSES:
+Endereli tcp/ip das interfaces que o servidor postgresql vai escutar/liberar conexões
+
+PORT:
+a porta tcp que o servidor postgresql vai ouvir, padrão é 5432
+
+MAX_CONNECTIONS:
+Numero maximo de conexões simultaneas no servidor postgresql
+
+
+SUPERUSER_RESERVED_CONNECTIONS:
+numero de conexões (slots) reservados para conexões ao banco de dados de super usuários
+
+
+
+COnfigurações de autenticação:
+AUTHENTICATION_TIMEOUT:
+tempo maximo em segundos para o cliente conseguir uma conexão com server
+
+PASSWORD_ENCRYPTION:
+algoritimo de criptografia das senhas dos novos usuarios criados no banco de dados
+
+SSL:
+habilita a conexão criptografada por SSL (só se o postgresql foi compilado com suporte SSL)
+
+
+Configurações de memória:
+SHARED_BUFFERS:
+tamanho da memoria compartilhada do server postgresql para cache/buffer de tabelas,indices e demais relações
+
+WORK_MEM:
+tamanho da memoria para operações de agrupamento e ordenação(ORDER BY, DISTINCT, MERGE JOINS)
+
+MAINTENANCE_WORK_MEM:
+tamanho da memoroia para operações como VACUUM,INDEX,ALTER TABLE.
+
+
+
+Arquivo pg_hba.conf:
+Arquivo responsavel pelo controle de autenticação dos usuarios no server postgreSQL
+
+
+MÉTODOS DE AUTENTICAÇÃO:
+TRUST(conexão sem requisição de senha)
+REJECT(rejeitar conexões)
+MD5(criptografia md5)
+PASSWORD(senha sem criptografia)
+GSS(generic secutiry service application program interface)
+SSPI(security support provider interface- somente p windows)
+KRB5 (kerberos versão 5)
+IDENT (utiliza o usuario do sistema do cliente via ident server)
+PEER (utiliza o usuario do sistema operacional do cliente)
+LDAP(ldap server)
+RADIUS(radius server)
+CERT(autenticação via certificado ssl do cliente)
+PAM(pluggable authentication modules .O usuario precisa estar no DB)
+
+
+Arquivo pg_ident.conf
+arquivo responsavel por mapear os usuarios do sistema operacional com os usuarios do DB
+Localizado no PGDATA 
+a opção ident dever ser usada no arquivo pg_hba.conf
+
+BInários do postgreSQL:
+createdb
+createuser
+dropdb
+dropuser
+initdb
+pg_ctl
+pg_basebackup
+pg_dump / pg_dumpall
+pg_restore
+psql
+reindexdb
+vacuumdb
+
+
+Cluster:
+Coleção de banco de dados que compartilham as mesmas configurações do postgresql e do sistema operacional
+
+Schema:
+Conjunto de objetos/relações (tabelas,funções,views,etc)
+
+
+

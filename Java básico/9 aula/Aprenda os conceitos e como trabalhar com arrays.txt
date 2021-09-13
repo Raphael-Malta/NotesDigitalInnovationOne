@@ -1,0 +1,79 @@
+Trabalhando com Arrays:
+
+O que é um array:
+Array ou matriz, é uma estrutura de dados que nos permite organizar valores na memória.
+Fazem parte da biblioteca java.util que é nativa do Java.
+Armazenam elementos do mesmo tipo
+Podem ser unidimensionais ou multidimensionais.
+Cada item em uma array é chamado de elemtno.
+Cada elemento é acessado pela posição numérica (índice)
+O índice inicia a partir de 0.
+Ao se declarar um array, todos índices são inicializados em 0.
+Arrays não podem mudar de tamanhom a partir do momento que uma array foi criada, ela não pode mudar de tamanho.
+Se você precisar de mais espaço, será necessário criar uma nova array e, antes de se referir a ela, copie os elementos
+da array velha.
+
+
+
+Declarando arrays em java:
+Utilizando o operador "new":
+	dataType[] arrayName = new dataType[arraySize];
+	int meuArray = new int[7];
+
+Outra forma:
+	dataType[] arrayName = {value0,value1 ...., valueN};
+	int[] meuArray= {12,32,54,6,8,89,64};
+
+
+Para alterar o valotr de um elemento específico, coloque o índice desse elemento:
+	meuArray[0] = 50;
+
+
+Comprimento do array:
+Para descobrir quantos elementos um array possui, use a propriedade length
+	System.out.println(meuArray.length);
+
+
+Percorrer Array:
+Para processar um array. devemos usar um laço de repetição (for, for each, while, do while..)
+Nesse exemplo utilizaremos FOR:
+Utilizamos uma variável de controle (contador), que vai de 0 até o número de posições do array.
+	public class MyClass{
+		public static void main(String[] args){
+			int[] meuArray = {12,32,54,6,8,89,64};
+			for (int i=0. i<7; i++){
+				System.out.println(meuArray[i]);
+		}
+	}
+}
+
+
+
+
+Arrays multidimensionais:
+Um array multidimensional é um array contendo um ou mais arrays internos.
+Exemplo de array bidimensional:
+	int[][] meuArrayMulti = {{1,2,3,4},{5,6,7}}
+meuArrayMulti é um array com dois arrays como seus elementos.
+
+
+Processando um array multidimensional:
+
+    public class MyClass{
+        public static void main(String args[]){
+            int [][] meuArrayMulti = {{1,2,3,4},{5,6,7}};
+            for (int i=0; i< meuArrayMulti.length; ++i){
+                for(int j=0; j<meuArrayMulti[i].length; ++j){
+                    System.out.println(meuArrayMulti[i][j]);
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+

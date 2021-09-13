@@ -1,0 +1,27 @@
+This:
+Quando estamos trabalhando com o termo this, no java, estamo, na verdade, fazendo uma auto referência.
+Esse conceito faz mais sentido quando estamos falando de construtores e métodos.
+
+Super:
+Analogamente ao This, quando falamos no Super também estamos fazendo uma referência,
+mas dessa vez estamos fazendo referência a superclasse em um cenário de herança.
+Atenção!!!!
+Como em java, todas as nossas classes herdam de Object, se usamos o super em uma classe que não tem um extends explicito
+estamos fazendo referência ao Object.
+
+Equals:
+Como sabemos todas as classes em java herdam de Object. E, portanto, tem por padrão alguns métodos.
+Um deles é o equals que serve para fazer comparações entre objetos.
+Entretanto esse método possui algumas peculiaridades.
+Por padrão, quando estamos comparando dois objetos, estamos comparando a referência deles.
+Então se instanciarmos dois carros, por mais que eles tenha exatamente as mesmas informações,o java não é capaz
+de identificar.
+Mas poderíamos sobrescrever o método equals() para que nossa lógica funcione do jeito que gostariamos.
+Tenha em mente que é uma boa prática sobrescrever esse método.
+
+
+HashCode:
+Quando falamos em hashCode, precisamos pensar em um código gerado que garanta um caráter único ao nosso objeto.
+Essa pode ser uma forma muito interessante para que possamos comparar se realmente um objeto é igual ao outro.
+Temos que garantir a implementação da lógica de hashCode sempre respeite as memas regras,
+pois quando compararmos os nossos objetos, o nosso fator de comparação será ele.

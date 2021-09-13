@@ -1,0 +1,3 @@
+Um banco de dados armazena dados de uma forma estruturada, tornando o acesso e atualização dos dados
+mais rápido, pois aumenta a eficiência computacional (menor "gasto" de memória , processamento e tempo).
+

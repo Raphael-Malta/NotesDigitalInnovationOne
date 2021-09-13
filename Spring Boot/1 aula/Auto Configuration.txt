@@ -1,0 +1,12 @@
+Configuração Manual:
+Múltiplos Arquivos XML.
+Configuração manual do Spring MVC: Dispatcher Servlet, web.xml, spring-mvc.xml.
+Configuração manual dos beans Spring.
+Aplicado também ao Spring Data, Spring Security, etc.
+
+Starters: dependências simplifiadas e auto confugráveis.
+
+Identificação e configuração automática da dependência.
+
+Spring Boot detecta as dependências e configura para nós.
+

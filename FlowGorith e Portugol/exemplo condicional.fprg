@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="rapha"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-06-28 10:31:56 "/>
+        <attribute name="created" value="cmFwaGE7REVTS1RPUC1VMENKS1YzOzIwMjEtMDYtMjg7IjEwOjE2OjQwICI7Mjc4MQ=="/>
+        <attribute name="edited" value="cmFwaGE7REVTS1RPUC1VMENKS1YzOzIwMjEtMDYtMjg7IjEwOjMxOjU2ICI7NzsyODk5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero, limite" type="Integer" array="False" size=""/>
+            <assign variable="numero" expression="1"/>
+            <assign variable="limite" expression="10"/>
+            <while expression="numero &lt;= limite">
+                <output expression="&quot;9x&quot; &amp; numero &amp;&quot; * &quot; &amp; 9*numero" newline="True"/>
+                <comment text="se n tiver esse numero + 1, vai ficar em loop(repetindo) infinitamente"/>
+                <assign variable="numero" expression="numero+1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

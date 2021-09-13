@@ -1,0 +1,63 @@
+O paradigma O.O.
+A pilha de chamadas funções... poderia ser movida para HEAP(area de memoria nao necessariamente ordenada - diferente da stack)
+possibilitando que as variáveis locais declaradas por uma função existissem muito depois que a função retornasse
+
+A diferença entre um Código procedural e um Orientado Objeto é bem simples
+Em códigos procedurais escolher o melhor algoritmo é o mais importante
+Já em linguagens orientadas a objetos, pensar no projeto de classes, como se encaixam, e como serão
+estendidas é o que mais importa
+
+
+
+Classe:
+Vamos entender uma classe como modelo a ser seguido
+Funcionara como uma especie de molde que servirá como base para construir algo
+Exemplo:
+Quando pensamentos em construir uma casa, nós fazemos uma planta baixa. Ela será o modelo que utilizaremos para construir algo concreto;
+As classes funcionam de forma parecida.
+
+
+Exemplo prático:
+public class Pessoa{
+	private String nome = "Marco";
+	public String getNome(){
+		return nome;
+	}
+}
+
+
+
+
+Objeto:
+Agora que entendemos que temos um modelo que podemos seguir, o que fazemos com esse modelo?
+Nós fizemos a analogia da casa, depois de termos a planta baixa, nós começamos a construir.
+E o resultado do que nós construímos, vamos chamar de objeto.
+
+Quando utilizarmos a nossa classe Pessoa, codigo exemplo a cima, para criar um objeto,
+nos diremos que estamos instanciando um objeto da classe Pessoa.
+E esse termo é bem simples de entender. O que acontece é que podemos criar varios objetos de uma mesma classe
+ou seja varias instancias de objetos.
+
+Exemplo:
+public class ExemploPessoa{
+	public static void main(String[] args) {
+		Pessoa pessoa = new Pessoa();
+
+		System.out.println(pessoa.getNome());
+	}
+}
+
+
+Atributos:
+Agora vamos pensar no que nos definimos como nome, Foi tão intuitivo  nós pensarmos que uma pessoa teria um nome
+que nem demos impostância a ele.
+O nome é uma caracteristica de uma Pessoa e ´pode ser diferente de pessoa para pessoa.
+O nome é um atributo da pessoa.
+
+
+
+Métodos:
+São ações.
+Por exemplo, uma pessoa pode falar.
+Pensando em uma cenário mais especifico, uma pessoa pode falar o seu nome
+As açõesque nós definimos que uma classe pode ter, nós cham,amos de métodos.

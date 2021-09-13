@@ -1,0 +1,10 @@
+ls mostra os diretorios
+cd / (acessa a base do diretorio)
+cd (nome pasta) vai pra pasta  exemplo(cd workspace/)
+cd ..
+clear ou Ctrl + L
+sudo su (pra pegar permissão)
+mkdir (cria o diretorio)
+
+echo hello > hello.txt
+rm -rf   (remove o diretorio, rf são flags, r deleta todas as pastas do diretorio, e o f força sem perguntar)

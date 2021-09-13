@@ -1,0 +1,28 @@
+Os lambdas obedecem o conceito do paradigma funcional, com eles podemos facilitar legibilidade do nosso código,
+alem disso com a nova API Funcional do java podemos ter uma alta produtividade para lidar com objetos.
+Primeiramente, devemos entender o que são interfaces funcionais.
+
+Interfaces funcionais:
+São interfaces que possuem apenas um método abstrato.
+Exemplo:
+public interface Funcao{
+	String gerar(String valor);
+}
+
+Geralmente as interfaces funcionais possuem uma anotação em nível de classe (@FunctionalInterfac), para forçar o
+compilador a apontar um erro se a interface não estiver de acordo com as regras de uma interface funcional.
+Esta anotação não é obrigatória, pois o compilador consegue reconhecer uma interface em tempo de compilação.
+
+Antes do Java 8, se quiséssemos implementar um comportamento especifico para uma única classe
+deveríamos utilizar uma classe anônima para implementar este comportamento.
+
+Agora que sabemos como se define uma interface funcional podemos, aprender como se define uma lambda.
+Estrutura de uma lambda:
+	InterfaceFuncional nomeVariavel = parametro -> logica
+
+
+Atenção!!!
+Quando uma lambda possui apenas uma instrução no corpo de sua lógica não é necessário o uso de chaves.
+Se a função possui mais de uma instrução DEVEMOS utilizar chaves e alem disso deve explicitar o retorno se o
+retorno for diferente de void.
+

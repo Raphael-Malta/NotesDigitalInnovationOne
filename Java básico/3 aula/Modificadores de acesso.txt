@@ -1,0 +1,36 @@
+public:
+Public pode ser acessada de qualquer lugar por qualquer entidade que possa visualizar a classe
+a que ela pertence
+
+private:
+os métodos e atributos da classe definidos como privados não podem ser acessados ou usadas por nenhum outra classe
+Esses atributos e métodos também não podem ser visualizados pelas classes herdadas;
+
+Protected:
+Torna o membro acessível as classes do mesmo pacote ou através de herança, seus membros herdados não são acessiveis
+a outras classes fora do pacote em que foram declarados.
+
+Dafault(padrão):
+A classe e/ou seus membros são acessiveis somente por classes do mesmo pacote,
+na sua declaração não é definido nenhum tipo de modificador, sendo este identificado pelo compilador.
+
+
+	Modificadores de acesso:
+Abstract:
+Esse modificador não é aplicado nas variáveis, apenas em classes e métodos.
+Uma classe abstrata não pode ser instanciada.
+Se houver alguma declaração de um método como abstract (abstrato), a classe também deve ser marcada como abstract
+Abstract é uma ideia de algo
+
+
+Static:
+é usado para a criação de uma variável que poderá ser acessada por todas as intâncias de objetos deta classe
+como uma variavel comum, ou seja, a variavel criada será a mesma em todas as instâncias e quando seu conteúdo é modificado
+numa das instâncias, a modificaçção ocorre em todas as demais.
+E nas declarações de métodos ajudam no acesso direto a classe, portanto não é necessario instanciar um objeto para
+acessar o método
+
+
+Final:
+Quando é aplicado na classe, não permite estender, nos métodos impede que o mesmo seja sobrescrito(overriding)
+na subclasse, e nos valores de variáveis não pode ser alterado depois que já tenha diso atribuído um valor.

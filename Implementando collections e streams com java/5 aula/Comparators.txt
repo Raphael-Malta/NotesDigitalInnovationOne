@@ -1,0 +1,8 @@
+Comparators:
+java.util.Comparator    - interface para definir classe com regra de ordenação
+java.util.COmparable    - interface para definir regra de ordenação em uma classe de domínio
+
+algoritmos de ordenação
+java.util.List
+Permite a ordenação de objetos complexos(criados pelo usuario)
+

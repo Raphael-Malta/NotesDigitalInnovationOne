@@ -1,0 +1,81 @@
+dados:
+São valores brutos,fatos brutos, observações documentadas, registros soltos, 
+que são recolhidos e armazenados sem sofrer qualquer tratamento.
+
+
+
+
+
+Informações:
+Conjunto de dados relacionados entre si que geram valor, que criam sentidos aos dados
+Material do conhecimento.
+
+
+
+			Modelos relacional:
+é o modelo de dados representativo, com principio de todo os dados armazenados
+seram armazenados em tabelas(q possuem linhas e colunas)
+(linhas são conhecidas como tuplas)
+(Colunas são conhecidas como atributos do dado)
+
+
+
+Tabelas:
+Conjuntos de dados dispostos em colunas e linhas referenteas a um objetivo comum
+As colunas são consideradas como "Campos da tabela", como atributos da tabela
+As linhas de uma tabelas são chamadas tambem de tuplas, e é onde estão contido os valores, os dados.
+
+
+O que pode ser definido como tabelas?:
+Coisas tangiveis:
+Elementos fisicos(carro,produto,animal)
+
+Funções:
+perfis de usuario, status de compra
+
+Eventos ou ocorrências:
+Produtos de um pedido, histórico de dados
+
+
+
+
+Colunas importantes:
+
+Chave primaria/primary key/ PK
+Conjunto de um ou mais campos cujo os valores nunca se repetem
+Passam a ser a identidade da tabela
+O valor será usado como indice de referência na criação de relacionamentos entre tabelas
+
+Chaves estrangeira/Foreign key/ FK
+Valor de referencia a uma PK de outra tabela, ou da mesma tabela para criar um relacionamento (para garantir integridade dos dados)
+
+
+Sistemas de gerenciamento de banco de dados (SGBD)
+Conjunto de programas ou softwares responsaveis pelo gerenciamento de um DB
+Programas que facilitam a administração de um banco de dados.
+
+
+
+				O que é PostgreSQL:
+SGBD relacional
+opensource (codigo aberto)
+
+Possui arquitetura multiprocessos
+Postmaster (Processo principal)
+Childs (copias do postmaster) (gerenciam conexões que entram e saem do banco de dados)
+Storage (gravar esses processos em disco)
+Cliente Servidor
+
+Principais caracteristicas:
+OpenSource
+Point in time recovery
+Linguagem procedural com suporte a várias linguagens de programação (peral,python etc)
+Views, functions, procedures, triggers
+Consultas complexas e Common table expressions )CTE)
+Suporte a dados geograficos (PostGIS)
+Controle de concorrencia multi-versão
+
+
+
+
+

@@ -1,0 +1,96 @@
+CREATE TABLE IF NOT EXISTS banco (
+	numero INTEGER NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	ativo BOOLEAN NOT NULL DEFAULT TRUE,
+	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (numero)
+);
+--(Em data_criacao pode se utilizar DEFAULT NOW() ao inves de current_timestamp)
+--LEMBRANDO QUE OS CAMPOS (ativo)(data_criacao) SÃO CAMPOS DE BOAS PRÁTICAS
+
+
+
+
+CREATE TABLE IF NOT EXISTS agencia(
+	banco_numero INTEGER NOT NULL,
+	numero INTEGER NOT NULL,
+	nome VARCHAR (80),
+	ativo BOOLEAN NOT NULL DEFAULT TRUE,
+	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(banco_numero, numero),
+	FOREIGN KEY (banco_numero) REFERENCES banco (numero)
+);
+
+
+CREATE TABLE cliente(
+	numero BIGSERIAL PRIMARY KEY,
+	nome VARCHAR(120) NOT NULL,
+	email VARCHAR(250) NOT NULL,
+	ativo BOOLEAN NOT NULL DEFAULT TRUE,
+	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE conta_corrente(
+	banco_numero INTEGER NOT NULL,
+	agencia_numero INTEGER NOT NULL,
+	numero BIGINT NOT NULL,
+	digito SMALLINT NOT NULL,
+	cliente_numero BIGINT NOT NULL,
+	ativo BOOLEAN NOT NULL DEFAULT TRUE,
+	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (banco_numero,agencia_numero,numero, digito,cliente_numero),
+	FOREIGN KEY(banco_numero, agencia_numero)  REFERENCES agencia (banco_numero, numero),
+	FOREIGN KEY (cliente_numero) REFERENCES cliente (numero)
+);
+
+
+
+CREATE TABLE tipo_transacao (
+	id SMALLSERIAL PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
+	ativo BOOLEAN NOT NULL DEFAULT TRUE,
+	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE cliente_transacoes (
+	id BIGSERIAL PRIMARY KEY,
+	banco_numero INTEGER NOT NULL,
+	agencia_numero INTEGER NOT NULL,
+	conta_corrente_numero BIGINT NOT NULL,
+	conta_corrente_digito SMALLINT NOT NULL,
+	cliente_numero BIGINT NOT NULL,
+	tipo_transacao_id SMALLINT NOT NULL,
+	valor NUMERIC(15,2) NOT NULL, -- pode ter 15 numeros, mas serão com 2 casas decimais
+	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (banco_numero,agencia_numero,conta_corrente_numero, conta_corrente_digito,cliente_numero)
+	REFERENCES conta_corrente (banco_numero,agencia_numero,numero, digito,cliente_numero)
+);
+
+
+
+--INSERTS
+
+INSERT INTO banco (numero,nome)
+VALUES (1,'Banco Santander');
+
+INSERT INTO agencia(banco_numero,numero,nome)
+VALUES (1,1,'Banco Santander')
+
+INSERT INTO cliente(nome,email,numero)
+VALUES ('Raphael Malta','raphaelmalta@hotmail.com', 100);
+
+INSERT INTO conta_corrente(banco_numero,agencia_numero,numero,digito,cliente_numero)
+VALUES (1,1,103151,1,100);
+
+INSERT INTO tipo_transacao (id,nome)
+VALUES(1,'crédito');
+
+INSERT INTO cliente_transacoes (id,banco_numero,agencia_numero,conta_corrente_numero, conta_corrente_digito,cliente_numero,tipo_transacao_id,valor)
+VALUES (1,1,1,103151,1,100,2,1000.00);
+
+
+
+
+
+

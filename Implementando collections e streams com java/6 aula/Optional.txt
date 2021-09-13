@@ -1,0 +1,7 @@
+Optionals
+Tratamento para valores que podem ser nulos
+Possui 2 estados:
+- Presente
+- Vazio
+Permite que você execute operações em valores que podem ser nulos sem procupação com as famosas NullPointerExceptions
+

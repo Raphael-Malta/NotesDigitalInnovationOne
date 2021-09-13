@@ -1,0 +1,44 @@
+JOIN:
+Exemplo:
+SELECT tabela_1.campos, tabela_2.campos
+FROM tabela_1
+JOIN tabela_2
+	ON tabela_2.campo = tabela_1.campo
+(On significa que vai ser passada uma condição do JOIN) (ela é igual ao where mas referente ao join)
+
+
+LEFT OUTER JOIN:
+(as tabelas que estão no relacionamento a esquerda trazem a tabela por completo,
+e a tabela da direita se houver um relacionamento ele retorna um dado, senão ele retorna um dado nulo)
+Exemplo:
+SELECT tabela_1.campos, tabela_2.campos
+FROM tabela_1
+LEFT JOIN tabela_2
+	ON tabela_2.campo = tabela_1.campo
+
+
+RIGHT JOIN (OUTER): (mesma relação mas a direita)
+SELECT tabela_1.campos, tabela_2.campos
+FROM tabela_1
+RIGHT JOIN tabela_2
+	ON tabela_2.campo = tabela_1.campo
+
+
+
+
+FULL OUTER JOIN: (tras todas as relações possiveis)
+(não é recomendável a utilização em diversas operações)
+SELECT tabela_1.campos, tabela_2.campos
+FROM tabela_1
+FULL JOIN tabela_2
+	ON tabela_2.campo = tabela_1.campo
+
+CROSS JOIN:(Não é recomendavel usar, só em situações extremas)
+Todos os dados de uma tabela será cruzados com todos os dados da tabela referenciada
+no CROSS JOIN criando uma matriz
+Exemplo:
+SELECT tabela_1.campos, tabela_2.campos
+FROM tabela_1
+CROSS JOIN tabela_2
+
+

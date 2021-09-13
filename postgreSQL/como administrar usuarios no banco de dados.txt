@@ -1,0 +1,32 @@
+Roles,users e grupo de usuarios:
+São perfis de atuação em um banco de dados que possuem permissões em comum ou específicas.
+Na versão postgreSQL8,1, usuarios e roles tinham comportamnetos diferentes 
+Atualmente são alias.
+é possivel que roles pertenãm a outras rolers.
+
+
+Associação entre roles:
+Quando uma role assume as permissões de outra role.
+Necessário a opção INHERIT
+No momento de criação do role:
+IN ROLE (passa a pertencer a role informada)
+ROLE (a role informada passa a pertencer a nova role)
+Ou após a criação da role:
+GRANT[role a ser concedida] TO [role a assumir as permissões]
+
+Desassociar membros entre roles
+REVOKE [role que será revogada] FROM [role que terá suas permissões revogadas]
+
+Excluindo uma role:
+DROP ROLE role_specification;(nome da role)
+
+
+
+Administrando acessos (GRANT):
+São os privilegios de acesso aos objetos do banco de dados.
+
+Revogando todas as permissões (simplificado)
+REVOKE ALL ON ALL TABLES IN SCHEMA [schema] FROM [role];
+REVOKE ALL ON SCHEMA [schema] FROM [role];
+REVOKE ALL ON DATABASE [database] FROM [role];
+(esses 3 comandos retiram todas as permissões)

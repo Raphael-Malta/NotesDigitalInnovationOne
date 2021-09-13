@@ -1,0 +1,13 @@
+O java.util.Calendar:
+Já na JDK 1.1 foi observada a necessidade de facilitar alguns recursos que a class Date oferecia.
+Sendo assim, a classe Calendar foi criada.
+Com isso uma série de métodos e construtores da classe Date foi depreciada. Por exemplo o construtor
+Date(int year, int monthm int date).
+
+Calendar:
+é uma classe abstrata que provê métodos para converter data entre um instante específico.
+O calendar possui alguns campos específicos para manipulação como MONTH, YEAR, HOUR etc.
+
+Imprimindo datas e horas:
+Aqui vão algumas maneiras de se converter o resultado de um objeto calendar.
+

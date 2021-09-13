@@ -1,0 +1,21 @@
+Nomes de classes
+Nomes de métodos
+Nomes de váriaveis
+
+
+
+Classes:
+Primeira miuscula
+
+Métodos:
+Sempre minusculos
+Se for composto exemplo:
+verificaComFiltro
+
+Váriaveis:
+Tem que ser bem claro com o nome das variaveis
+Não é convencional colocar caracteres especiais (exemplo: _)
+
+Utilização do "var" é opcional
+
+

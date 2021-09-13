@@ -1,0 +1,41 @@
+git status
+
+Exemplo de como mover pastas para outras pastas/repositorios
+mv (nome doq quer mover) ./nome pra onde será movido/
+
+Modificiando o estado dos arquivos para staged
+git add nome_do_arquivo diretorio/
+git add * (o asterisco adiciona tudo em staged pra poder commitar)
+
+se quiser modificar o estado para unstaged 
+git restore --staged nome_do_arquivo to unstage
+
+git commit -m "frase"  (pega os arquivos q estavam em staged envelopa eles
+ em uma frase e cria o objeto chamado commit)
+(-m é uma flag, é pra passar uma mensagem)
+
+
+
+
+
+git config --list (mostra os dados)
+git config --global --unset user.email(pra trocar o email)
+git config --global --unset user.name(pra trocar o nome)
+git config --global user.email(cadastrar o email)
+git config --global user.name(cadastrar o nome)
+
+
+
+git remote add origin (link do github do repositorio) (Nome origin pode ser qualquer um, mas por convenção se utiliza origin)
+git remote -v(mostra as listas de repositorios cadastrados)
+
+
+git push origin master
+(origin é o apelido q da no github) 
+git push -u origin main (obrigada a dar o push)
+
+git pull origin master (puxa o codigo pra maquina e o git tenta juntar os dois)
+
+
+git clone (url q possui o codigo q vc quer clonar) 
+(clona o repositorio q vc baixa do github)

@@ -1,0 +1,22 @@
+DIR (lista os diretorios)
+todos os os comandos usados possuem variancias(flags) q são complementos q passamos pro comandos que 
+acrescentam,modificam ou formatam
+
+cd / (leva para base do diretorio C)
+cd Windows (vai pra pasta windows)
+cd .. (volta um nivel )
+cls(clear screen) limpar o terminal 
+TAB (auto completar)
+
+mkdir (cria um diretorio )
+Terminal geralmente n avisa nada qnd da sucesso(silencio no sucesso)
+
+echo (printa no terminal um texto q vc passa)
+echo (texto) > arquivo.txt (joga o texto em um arquivo txt
+
+del (pasta) pra deletar tudo da pasta mas não deleta o diretorio
+
+rmdir (pasta) /S /Q  (S e o Q são flags usuais)(remove o repositorio/diretorio)
+
+
+

@@ -1,0 +1,86 @@
+SELECT COUNT(1) FROM BANCO; -- Quantos bancos, o (1) é pra contar quantos tem ao todo
+SELECT COUNT (1) FROM agencia; --Quantas agencias
+
+SELECT banco.numero, banco.nome, agencia.numero, agencia.nome
+FROM banco
+JOIN agencia ON agencia.banco_numero = banco.numero;--(todas as agencias que possuem um banco, ou seja uma relação)
+
+SELECT COUNT (banco.numero)--Pode-se colocar distinct dentro do () com banco.numero,(distinct banco.numero) que evita a repetição 
+FROM banco
+JOIN agencia ON agencia.banco_numero = banco.numero;--(retorna o número de bancos)
+
+SELECT banco.numero, banco.nome, agencia.numero, agencia.nome
+FROM banco
+LEFT JOIN agencia ON agencia.banco_numero = banco_numero;--(retorna todos os bancos, junto com os bancos que não possuem agencia )
+
+
+SELECT agencia.numero, agencia.nome, banco.numero, banco.nome
+FROM agencia
+RIGHT JOIN banco ON banco.numero = agencia.banco_numero;
+
+
+SELECT banco.numero, banco.nome, agencia.numero, agencia.nome
+FROM banco
+FULL JOIN agencia ON agencia.banco_numero = banco.numero;--traz todos os dados
+
+##############################################
+Fazendo um teste:
+
+CREATE TABLE IF NOT EXISTS teste_a(
+	ID serial PRIMARY KEY,
+	valor VARCHAR(10)
+);
+
+CREATE TABLE IF NOT EXISTS teste_b(
+	ID serial PRIMARY KEY,
+	valor VARCHAR(10)
+);
+
+
+INSERT INTO teste_a(valor)
+VALUES ('Teste1');
+INSERT INTO teste_a(valor)
+VALUES ('Teste2');
+INSERT INTO teste_a(valor)
+VALUES ('Teste3');
+INSERT INTO teste_a(valor)
+VALUES ('Teste4');
+
+INSERT INTO teste_b(valor)
+VALUES ('Testea');
+INSERT INTO teste_b(valor)
+VALUES ('Testeb');
+INSERT INTO teste_b(valor)
+VALUES ('Testec');
+INSERT INTO teste_b(valor)
+VALUES ('Tested');
+
+
+
+SELECT tbla.valor, tblb.valor
+FROM teste_a tbla --Transforma o nome de teste_a em tbla
+CROSS JOIN teste_b tblb;-- Transformando o nome de teste_b em tblb;
+
+DROP TABLE IF EXISTS teste_a;
+DROP TABLE IF EXISTS teste_b;
+-- fim do exemplo
+############################################################
+
+
+SELECT banco.nome,
+		agencia.nome,
+		conta_corrente.numero,
+		conta_corrente.digito,
+		cliente.nome
+FROM banco
+JOIN agencia ON agencia.banco_numero = banco.numero
+JOIN conta_corrente 
+	--ON conta_corrente.banco_numero = agencia.banco_numero --Pode usar esse ou o de baixo
+	ON conta_corrente.banco_numero = banco.numero
+	AND conta_corrente.agencia_numero = agencia.numero
+JOIN cliente
+	ON cliente.numero = conta_corrente.cliente_numero;
+
+
+
+

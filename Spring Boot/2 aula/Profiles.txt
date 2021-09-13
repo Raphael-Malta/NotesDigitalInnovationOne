@@ -1,0 +1,15 @@
+Múltiplos ambientes:
+Ambientes para desenvolvimento, teste e produção.
+
+Bancos de dados para cada ambiente.
+
+Execução de testes unitários em ambiente local.
+
+Suíte de testes completas em ambiente de teste.
+Simulação do ambiente real em staging.
+Deploy simplificado em produção.
+
+Spring Boot Profiles:
+Configurações próprias para cada ambiente.
+Ambientes com sua confiuguração: dev, production.
+

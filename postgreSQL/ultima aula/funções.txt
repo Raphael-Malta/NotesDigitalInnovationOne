@@ -1,0 +1,99 @@
+Definição de funções:
+Conjunto de codigos que são executados dentro de uma transação com a finalidade de
+facilitar a programação e obter o reaproveitamento/reutilização de códigos.
+
+Existem 4 tipos d funções:
+query language functions (funções escritas em sql)
+procedural language functions (funções escritas em, por exemplo, PL/pgSQL ou PL/py)
+internal functions
+C-language functions
+
+O foco da aula é falar sobre USER DEFINED FUNCTIONS
+
+Linguagens:
+SQL
+PL/PGSQL (foco da aula)
+PL/PY
+PL/PHP
+PL/RUBY
+PL/Java
+PL/Lua
+Dentre outras
+
+
+IDEMPOTÊNCIA:
+CREATE OR REPLACE FUNCTION [nome da função]
+3 regras a serem seguidas:
+Mesmo nome
+Mesmo tipo de retorno
+Mesmo numero de parâmetros/argumentos
+
+RETURNS:
+tipo de retorno (data type)
+INTEGER
+CHAR/VARCHAR
+BOOLEAN
+ROW
+TABLE
+JSON
+
+LANGUAGE:
+SQL
+PLPGSQL
+PLJAVA
+PLPY
+......
+
+
+
+SEGURANÇA:
+SECURITY:
+INVOKER
+DEFINER
+
+
+
+COMPORTAMENTO:
+IMMUTABLE:
+não pode alterar o banco de dados
+funções que garantem o mesmo resultado para os mesmo argumentos/parâmentros da função
+Evitar a utilização de selects, pois tabelas podem sofrer alterações
+
+STABLE:
+Não pode alterar o bando de dados
+Funções que garantem o mesmo resultado para os mesmo argumentos/parâmetros da função
+Trabalha melhor com tipos de current_timestamp e outros tipos de variaveis. Podem conter selects
+
+VOLATILLE:(padrão do postgres)
+COmportamento padrão. Aceita todos os cenarios.
+
+
+
+SEGURANÇA E BOAS PRÁTICAS
+CALLED ON NULL INPUT:
+padrão
+Se qualquer um dos parâmetros/ argumentos fo NULL, a função será executada
+
+RETURNS NULL ON NULL INPUT:
+Se qualquer um dos parametros/argumentos for NULL, a função retornará NULL
+
+
+SECURITY INVOKER:
+padrão
+Função é executada com as permissões de quem executa
+
+SECURITY DEFINER:
+A função é executada com as permissões de quem criou a função
+
+
+
+RECURSOS:
+COST:
+custo/row em unidades de CPU
+
+ROWS:
+Numero estimado de linhas que será analisada pelo planner
+
+
+
+

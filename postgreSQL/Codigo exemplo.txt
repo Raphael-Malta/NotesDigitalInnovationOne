@@ -1,0 +1,25 @@
+CREATE ROLE professores NOCREATEDB NOCREATEROLE INHERIT NOLOGIN NOBYPASSRLS CONNECTION LIMIT 10;
+ALTER ROLE professores PASSWORD '123'; (COLOCANDO SENHA NO PROFESSORES)
+CREATE ROLE daniel LOGIN PASSWORD '123'; (cria uma role chamada daniel)
+Para comentar no pg admin é só por --
+
+DROP ROLE daniel; (exclui a role daniel)
+
+CREATE ROLE daniel LOGIN PASSWORD '123' IN ROLE professores; (recriando role daniel, fazendo com que daniel faça parte da role professores)
+CREATE ROLE daniel LOGIN PASSWORD '123' ROLE professores; (agora professores faz parte de daniel)
+
+
+
+CREATE TABLE teste (nome varchar);
+GRANT ALL ON TABLE teste TO professores; (dando todos os privilegios na tabela teste para role professores)
+
+CREATE ROLE daniel INHERIT LOGIN PASSWORD '123' IN ROLE professores;
+(daniel faz parte dos professores e herda as permissões da role de professores)
+
+REVOKE professores FROM daniel;
+
+
+(no terminal)
+\du (vê todas as roles q possui)
+SELECT * FROM pg_roles; (mostra todas as roles disponiveis)
+

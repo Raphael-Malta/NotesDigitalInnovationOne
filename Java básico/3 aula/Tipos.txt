@@ -1,0 +1,29 @@
+Primitivos:
+Não aceitam NULL
+Possuem valores default
+
+
+Wrappers:
+São Objetos que representam os primitivos
+Auto-boxing e Unboxing
+Auto-boxing: 
+Auto constroe um objeto, seguindo as regras dos primitivos, e por ser um objeto vc consegue colocar NULL.
+Unboxing:
+Dado uma classe, consegue atribuir o tipo primitivo
+
+Não Primitivos:
+String
+Number
+Object
+Qualquer outro objeto (objetos)
+
+
+
+Tipagem forte e estática:
+Forte e estática
+var - Inferência de tipo
+Tipagem estatica:
+os tipos das  variaveis são verificados em tempo de compilação.
+
+TipoInferido:
+Usar palavra reservadas, por exemplo: Var.

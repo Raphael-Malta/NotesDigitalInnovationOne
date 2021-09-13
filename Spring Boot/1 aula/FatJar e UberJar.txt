@@ -1,0 +1,20 @@
+Spring tradicional: war precisa de servidor de aplicação.
+
+Dependência de um container web ou servidor de aplicação.
+
+Complexidade para confiruações.
+
+Atualizações frequentes, junto com a versão do projeto.
+
+Gerenciamento manual de configuração
+
+
+
+
+FatJar/ UberJar
+
+Artefato do projeto pronto para execução.
+Container web embutido na geração e execução(tomcat).
+Deploy embarcado com outros containers são opcionais.
+Dependências principais do projeto embarcados.
+

@@ -1,0 +1,1 @@
+Tipo logico(boolean) q só volta verdadeiro ou falso utiliza ''alternativa'' no programa

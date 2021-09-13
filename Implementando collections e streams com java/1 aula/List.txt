@@ -1,0 +1,5 @@
+java.util.List
+Garante ordem de inserção
+Permite adição, atualização, leitura e romoção sem regras
+Permite ordenação através de comparators
+

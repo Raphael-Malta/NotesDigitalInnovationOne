@@ -1,0 +1,9 @@
+Ao utilizar 'final' em java, significa que a variavel é uma constante
+Ou seja, a variavel não pode ter seu valor modificado ao decorrer do programa.
+
+
+Para não ter que ficar declarando o tipo de variavel, vc pode utilizar var e o nome da variavel
+fazendo com que assim o proprio java já saiba qual o tipo da variavel que ele vai receber.
+
+
+

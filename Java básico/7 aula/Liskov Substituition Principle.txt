@@ -1,0 +1,5 @@
+Lisko Substitution Principle:
+Classes derivadas devem ser substituiíveis por suas classes base.
+O princípio da substituição de Liskov foi introduzido por barbara Lisko em 1987:
+"Se para cada objeto o1 do tipo S há um objeto o2 do tipo T  de forma que, para todos os programas P,
+o comportamento de P é inalterado quando o1 é substituido por o2, então S é um subtipo de T.

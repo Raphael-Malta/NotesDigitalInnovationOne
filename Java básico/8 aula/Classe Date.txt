@@ -1,0 +1,33 @@
+O java.util.Date
+Antes de qualquer coisa, vamos definir o ponto que estamos.
+A implementação do java.util.Date está na JDK desde a versão 1.0
+é de se esperar que algumas coisas não se mostrem tão interessantes nos dias atuais, dado a sua idade.
+Veremos como podemos trabalhar com a manipulação de datas a classe java.util.Date do java
+
+Date() :
+Este construtor vai alocar um objeto da classe Date e o inicilizará com o milessegundo mais proximo do periodo
+da sua execução.
+
+Date(long date):
+Diferente do construtor anterior, esse contrutor espera que você passe os milissegundos com base padrão
+de tempo(epoch) que usa como referência 1de janeiro de 1970 00:00:00
+
+"O epoch timestamp é um padrão largamente aceito para representar uma data como um inteiro 32-bits a partir
+do início do Unix Epoch..."
+
+Vamos testar com base no System.currentTimeMillis()
+Esse método estático vai nos retornar o milissegundo mais próximo de sua execução com base no Sistema Operacional.
+
+
+Métodos úteis:
+Alguns métodos da classe Date são muito úteis e serão usados com frequência durante a manipulação de datas.
+
+Classe instant:
+Sugrgiu na JDK 1.8;
+Imutável e Thread safe;
+Modela um ponto instantâneo de uma linha do tempo;
+Indicado para gravar marcações temporais em eventos da sua aplicação;
+
+
+From e ToInstant:
+

@@ -1,0 +1,70 @@
+IDEMPOTÊNCIA:
+	propriedade que algumas ações/operações possuem possibilitando-as de serem executadas diversas vezes sem
+	alterar o resultado após a aplicação inicial.
+Usar IF NOT EXISTS é uma boa prática para se usar em todas tabelas criadas no db
+	Pq ele evita dar erros ao tentar criar uma mesma tabela.
+
+
+Melhores práticas em DDL:
+	Criar/Acrescentar colunas que são 'atributos básicos' do objeto;
+	Exemplo: tabel CLIENTE: coluna TELEFONE / coluna AGENCIA_BANCARIA
+	Cuidado com regras(Constraints)
+	Cuidado com excesso de FKs
+	Cuidado com tamanho indevido de colunas (Varhcar(255).
+
+
+DML(conhecido também como CRUD):
+	SELECT (comando utilizado para fazer pesquisas)
+	SELECT (campos) FROM (tabela) WHERE (condição)
+
+Exemplo de utilização do LIKE:
+	SELECT nom FROM cliente WHERE email LIKE '%gmail.com' (pega todos os emails q terminam com gmail.com)
+	
+	SELECT numero FROM agencia
+	WHERE banco_numero IN (SELECT numero FROM banco WHERE nome ILIKE '%Bradesco%'(o '%nome%',Pega qlqr coisa q tenha Bradesco mesmo sendo maiusculo ou minuscula) 
+	(tome muito cuidado com esse tipo de select, pois se trata de duas consultas, gasta muito recurso)
+
+
+Condições do SELECT( WHERE/ AND/ OR):
+	=
+	> / >= (maior / maior igual)
+	< / <= (menor / menor igual)
+	<> / != (diferente)
+	LIKE 
+	ILIKE
+	IN
+	Primeira condição sempre WHERE
+	AND ou OR.
+
+SELECT *
+	Evite utilizar o *, pq ela puxa tudo q se tem na tabela ou seja vc tras todas as colunas do DB
+	ao utilizar SELECT * ele demanda um tamanho maior
+	Veja a idempotência nas imagens
+
+INSERT
+	INSERT campos da tablea VALUES valores;
+	Veja a idempotência nas imagens
+
+usando ON conflict:
+	se utilizar ON CONFLICT (pk) DO NOTHING (caso de conflito não faça nada)
+
+UPDATE: 
+	UPDATE (tabela) SET campo1 = novo_valor WHERE (condição)
+	(utilizar sempre update com uma condição where)
+DELETE:
+	mesmo caso do de cima, sempre utilizar uma condição where
+
+
+TRUNCATE:
+Definição:
+	'Esvazia' a tabela.
+	TRUNCATE [table] [only] nome tabela [*] [, ...]
+	[ RESTART IDENTITY | CONTINUE IDENTITY] [CASCADE | RESTRICT] 
+	(PADRÃO É CONTINUE IDENTITY) 
+	(continue identity se vc esvazia a tabela mesmo ele volta como um depois, ou seja se tiver 10 e vc esvaziar o proximo inserido vai ser o 11)
+	Restrict n deixa limpar a tabela por causa das FKs
+	O cascade apaga tudo, e se tiver uma referência em outra tabela, ele apaga as referências tbm.
+
+	
+
+

@@ -1,0 +1,31 @@
+Strings:
+É uma sequência de caracteres;
+Pacote java.lang;
+
+string.charAt(posição) //retorna o caractere da posição informada
+string.length() //retorna o tamanho da string
+string.trim() //Tira os caracteres em branco
+string.toLowerCase() //Coloca tudo em minusculo
+string.toUpperCase() //Coloca tudo em maiusculo
+string.contains("Letra") // Retorna TRUE or FALSE se tiver a letra q vc quer
+string.replace(charSequence:'caracter' , charSequence1:'caracter')// troca o caracter 1 pelo caracter 2
+string.equals() //retorna TRUE or FALSE  se as strings forem iguais
+string.equalsIgnoreCasa(s:"minha string")//Verifica ignorando se está maiusculo ou minusculo
+string.substring(i: numero, i1: numero) //pega o valor da 1 posição informada até a 2 posição informada
+
+Esses são os mais comuns utilizados, porém existem mais métodos
+
+string.format(s:"frase %s",variavel) //Faz com que onde tenha %s tenha a variavel da string
+(Parecido com a linguagem C)
+
+Para números em float pode se usar %f, mas limitando em duas casas seria %.2f
+
+String.Builder(nome)
+System.out.println(builder.append(string)
+//O append faz a adição da string ao nome
+
+builder.reverse() // faz a inverção da string exemplo: Raphael viraria leahpar
+da pra utilizar reverse.insert() //insere nas posições faladas oq vc quer inserir
+
+
+

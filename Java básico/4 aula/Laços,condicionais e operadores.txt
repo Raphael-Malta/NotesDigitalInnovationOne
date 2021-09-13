@@ -1,0 +1,18 @@
+IF
+FOR
+WHILE e DO WHILE
+
+Operadores:
+	IGUALDADE
+	LÓGICOS
+	INCREMENTO
+	MATEMÁTICOS
+	RELACIONAIS
+
+
+condição ? "verdadeira" : "falsa"
+essa interrogação é pra representar if e else ao mesmo tempo
+
+ao usar icremento por exemplo
+++numero (ele imprime na hora)
+numero++ (imprime depois)

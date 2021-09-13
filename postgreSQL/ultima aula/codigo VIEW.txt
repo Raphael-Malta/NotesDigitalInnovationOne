@@ -1,0 +1,109 @@
+CREATE OR REPLACE VIEW vw_bancos AS(
+	SELECT numero, nome, ativo
+	FROM banco
+);
+
+SELECT numero, nome, ativo 
+FROM vw_bancos;
+
+
+
+
+CREATE OR REPLACE VIEW vw_bancos2 (banco_numero, banco_nome, banco_ativo) AS (
+	SELECT numero, nome, ativo
+	FROM banco
+);
+
+SELECT banco_numero, banco_nome, banco_ativo
+FROM vw_bancos2;
+
+
+
+INSERT INTO vw_bancos2 (banco_numero, banco_nome, banco_ativo)
+VALUES (51, 'Banco Teste', TRUE);
+
+SELECT banco_numero, banco_nome, banco_ativo
+FROM vw_bancos2
+WHERE banco_numero = 51;
+SELECT numero,nome,ativo FROM banco WHERE numero=51;
+
+
+UPDATE vw_bancos2 SET banco_ativo = FALSE WHERE banco_numero = 51;
+
+
+DELETE FROM vw_bancos2 WHERE banco_numero = 51;
+
+
+CREATE OR REPLACE TEMPORARY VIEW vw_agencia AS(
+	SELECT nome FROM agencia
+);
+SELECT nome FROM vw_agencia;-- se for em outra aba ele não mostrara nada aqui
+
+
+
+
+
+CREATE OR REPLACE VIEW vw_bancos_ativos AS (
+	SELECT numero, nome, ativo
+	FROM banco
+	WHERE ativo IS TRUE
+)WITH LOCAL CHECK OPTION;
+
+INSERT INTO vw_bancos_ativos (numero,nome,ativo) VALUES (51,'Banco teste', False); -- aqui da erro pq o with ali só aceita se for TRUE
+
+
+CREATE OR REPLACE VIEW vw_bancos_com_a AS (
+	SELECT numero,nome,ativo
+	FROM vw_bancos_ativos
+	WHERE nome ILIKE 'a%'
+)WITH LOCAL CHECK OPTION;
+
+SELECT numero, nome, ativo FROM vw_bancos_com_a;
+
+INSERT INTO vw_bancos_com_a (numero,nome,ativo) VALUES (333,'Alfa Omega', TRUE);
+INSERT INTO vw_bancos_com_a (numero,nome,ativo) VALUES (331,'Alfa Gama', False);-- Se não começar com A e não for TRUE ele não aceita
+-- Se remover o WITH LOCAL CHECK OPTION, ele começa a aceitar os valores False, ou trocando para WITH CASCADED CHECK OPTION ele valida a regras da propria view e da anterior 
+
+
+CREATE TABLE IF NOT EXISTS funcionarios (
+	id SERIAL,
+	nome VARCHAR(50),
+	gerente INTEGER,
+	PRIMARY KEY (id),
+	FOREIGN KEY (gerente) REFERENCES funcionarios (id)
+);
+
+INSERT INTO funcionarios (nome,gerente) VALUES ('Ancelmo',NULL);
+INSERT INTO funcionarios (nome,gerente) VALUES ('Beatriz',1);
+INSERT INTO funcionarios (nome,gerente) VALUES ('Magnum',1);
+INSERT INTO funcionarios (nome,gerente) VALUES ('Cremilda',2);
+INSERT INTO funcionarios (nome,gerente) VALUES ('Wagner',4);
+
+
+SELECT id, nome, gerente FROM funcionarios WHERE gerente IS NULL ;
+
+
+
+
+SELECT id, nome, gerente FROM funcionarios WHERE gerente IS NULL
+UNION ALL
+SELECT id, nome, gerente FROM funcionarios WHERE id = 999;-- apenas para exemplificar
+
+
+CREATE OR REPLACE RECURSIVE VIEW vw_func(id, gerente, funcionario) AS (
+	SELECT id, gerente, nome
+	FROM funcionarios
+	WHERE gerente IS NULL
+	
+	UNION ALL
+	
+	SELECT funcionarios.id, funcionarios.gerente, funcionarios.nome -- primeira vez ao executar essa parte, ela retorna nulo, mas como recursividade ela fica chamando todas as vezes até o fim
+	FROM funcionarios
+	JOIN vw_func ON vw_func.id = funcionarios.gerente
+);
+
+SELECT id, gerente, funcionario
+FROM vw_func;
+
+
+

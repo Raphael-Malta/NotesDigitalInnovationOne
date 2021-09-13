@@ -1,0 +1,12 @@
+View:
+Sâo visões.
+São 'camadas' para as tabelas.
+São 'alias' para uma ou mais queries.
+Aceitam comandos de SELECT, INSERT, UPDATE e DELETE.
+
+Ao criar uma view temporary, ela fica apenas no seu navegador
+
+View recursive, o comando no interior dela vai chamar ela mesma (recurção)
+(obrigatorio a existencia dos campos da VIEW) (Tbm a existencia do comando UNION ALL)
+(union unifica resultados iguais)
+(union all não unifica)	

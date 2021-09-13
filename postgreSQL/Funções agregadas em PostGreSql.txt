@@ -1,0 +1,71 @@
+Funções Agregadas utilizadas no dia a dia:
+AVG
+COUNT (opção: HAVING)
+MAX
+MIN
+SUM
+
+select * FROM information_schema.columns (mostra todas as colunas de todas as tabelas q vc tem)
+select * FROM information_schema.columns where table_name = 'banco'; (mostra todas colunas de banco)
+select column_name FROM information_schema.columns where table_name = 'banco'
+select column_name, data_type FROM information_schema.columns where table_name = 'banco'
+
+
+AVG (pega a media):
+SELECT AVG (valor) FROM cliente_transacoes; (esse valor é o nome da coluna no db, mas pode ser outro nome do seu db)
+
+
+COUNT (contagem de dados):
+SELECT COUNT (numero)
+FROM cliente;
+-- Outro exemplo:
+SELECT COUNT (numero),email
+FROM cliente
+WHERE email ILIKE '%gmail.com' -- sem o group by ele da erro
+GROUP BY email; -- group by é pra agrupar o email
+
+MAX (maximo valor):
+SELECT MAX(numero)
+FROM cliente;
+--Outro exemplo:
+SELECT MAX(valor), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transacao_id;
+select * from cliente_transacoes
+
+
+
+MIN (menor valor):
+SELECT MIN (numero)
+FROM cliente;
+--Outro exemplo:
+SELECT MIN(valor), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transacao_id;
+select * from cliente_transacoes
+
+
+HAVING:
+SELECT COUNT (id), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transacao_id
+HAVING COUNT(id) > 0;
+
+(having é util para achar valores duplicados na tabela)
+
+SUM (soma dos valores):
+
+SELECT SUM (valor)
+FROM cliente_transacoes;
+--Outro exemplo
+SELECT SUM (valor)
+FROM cliente_transacoes;
+--Outro exemplo
+SELECT SUM (valor), tipo_transacao_id
+FROM cliente_transacoes
+GROUP BY tipo_transacao_id
+ORDER BY tipo_transacao_id ASC; --(asc é acendente) pode se utilizar DESC tbm, Order by é pra odernar os valores
+
+
+
+

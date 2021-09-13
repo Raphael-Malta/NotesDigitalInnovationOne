@@ -1,0 +1,42 @@
+Database:
+Não compartilham os objetos dentro de cada banco, compartilha os usuarios(roles) e as config do cluster
+é o banco de dados
+Grupo de schemase seus objetos, como tabelas,types,views, funções, entre outros.
+Seus schemas e objetos não podem ser compartilhados entre si
+Cada database é separado um do outro compartilhando apenas, usuários/roles e configurações do cluster PostgreSql
+
+Schemeas:
+Grupo de objetos dentro do banco de dados
+é um grupo de objetos, como tabelas, types, views, funções, entre outros.
+é possivel relacionar objetos entre diversos shemas
+
+Objetos:
+São as tabelas, views, funções, types, sequences, entre outros, pertencentes aos schemas.
+Tudo aquilo que podemos interagir dentro dos Schemeas.
+
+Tabelas, Colunas e Tipos:
+Definição:
+COnjuntos de dados dispostos em colunas e linhas referentes a um objetivo comum.
+As colunas são consideradas como ''campos da tabela'', como atributos da tabela.
+As linhas de uma tabela são chamadas também de tuplas, e é onde estão contidos os valores, os dados.
+
+
+Foreign Key:
+Campo ou conjunto de campos que são referências de chaves primárias de outras tabelas ou da mesma tabela.
+Sua principal função é garantir a integridade referencial entre tabelas.
+
+Diferença entre varchar e char:
+se ao definir varchar() sem o tamanho, apenas VARCHAR ele vai contando os caracteres
+já o char se vc n passar o tamanho ele só considera como tamanho 1
+
+DML:
+data manipulation languagem>
+Linguagem de manipulação de dados
+INSERT, UPDATE, DELETE, SELECT(alguns consideram select como parte do dml)
+
+DDL:
+data definition language
+Linguagem de definição de dados
+CREATE, ALTER, DROP
+
+

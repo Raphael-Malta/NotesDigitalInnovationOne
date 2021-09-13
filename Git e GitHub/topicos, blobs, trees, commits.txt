@@ -1,0 +1,27 @@
+openssl sha1 (nome do arquivo) cria uma sequencia de caracteres de 40 digitos
+Git  armazena metadados
+Obs: Se mudar um dado do arquivo vc altera todo o restante do arquivo
+
+
+Blob:
+estrutura do blob(blob contem metadados do git)
+exemplo:
+echo -e 'blob 9/0conteudo' | openssl sha1
+
+
+Tree(contem metadados tbm, armazena blobs)  \0 significa q ela contem metadados
+Responsavel por montar toda a estrutura dos arquivos (server para blobs ou outras arvores)
+
+
+
+Commit (é o que junta tudo)
+Ele aponta para outro commit ou pra um tree ou pra um autor(autor seria qm está fazendo o commit) ou pra uma mensagem
+Commit tbm possui um sha1
+Quando vc tem um commit vc ta garantindo q ngm alterou aquele arquivo
+
+
+
+
+
+
+

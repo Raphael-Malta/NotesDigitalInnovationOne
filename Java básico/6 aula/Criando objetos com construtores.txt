@@ -1,0 +1,18 @@
+Construtores:
+Podemos entender o termo construtor no sentido literal, afinal vamos construir um objeto.
+Por meio de um construtor, criamos um objeto baseado em uma classe e assim o alocamos em memória.
+Ao criarmos um objeto dizemos que estamos instanciando um objeto.
+
+Quando não temos um construtor padrão(sem parâmetros) definidos em uma classe,
+é subentendido que temos um construtor desse tipo na classe.
+Cuidado, Isso só vale quando não tiver outro construtor definido.
+
+Podemos também criar construtores parametrizados.
+Dessa forma conseguimos definir um contrato onde sempre será obrigatório passar alguma informação
+na hora de instanciar a classe.
+
+E existe um destrutor?
+Em java não existe o conceito de destrutor explicito.
+Lembra que falamos que quando instanciamos, estamos,na verdade, alocando o objeto em memoria?
+Pois bem. Desalocar esse objeto fica por conta do GC (garbas collector)
+
